@@ -46,4 +46,16 @@ public class DocActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case EDIT_TITLE:
+                if (resultCode==RESULT_OK){
+                    title = data.getStringExtra("text");
+                    titleview.setText(title);
+                }
+                break;
+        }
+    }
 }
