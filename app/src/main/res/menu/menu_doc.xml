@@ -7,4 +7,9 @@
         android:icon="@drawable/ic_edit"
         android:title="@string/edit_title"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/option_edit_descr"
+        android:icon="@drawable/ic_format"
+        android:title="@string/edit_descr"
+        app:showAsAction="ifRoom" />
 </menu>

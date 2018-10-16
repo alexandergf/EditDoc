@@ -2,4 +2,5 @@
     <string name="app_name">EditDoc</string>
     <string name="save">Save</string>
     <string name="edit_title">Edit title...</string>
+    <string name="edit_descr">Edit text...</string>
 </resources>

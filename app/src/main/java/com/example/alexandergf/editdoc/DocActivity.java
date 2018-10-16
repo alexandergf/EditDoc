@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class DocActivity extends AppCompatActivity {
 
     public static final int EDIT_TITLE=1;
+    public static final int EDIT_DESCR=2;
 
     //model
     private String title="Lorem Ipsum", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend id odio vitae iaculis. Pellentesque interdum quis risus ac bibendum. In ut dignissim nisi. Suspendisse euismod elit enim, at eleifend nisi dictum ut. Sed eu vestibulum diam, et venenatis velit. Curabitur rutrum ut nisi sed commodo. Curabitur condimentum blandit ligula, a ultrices felis feugiat ut. ";
@@ -43,6 +44,13 @@ public class DocActivity extends AppCompatActivity {
                 //intent.putExtra("",);
                 startActivityForResult(intent,EDIT_TITLE);
                 break;
+
+            case R.id.option_edit_descr:
+                Intent intent2 = new Intent(this,EditTextActivity.class);
+                intent2.putExtra("text",text);
+
+                startActivityForResult(intent2,EDIT_DESCR);
+                break;
         }
         return true;
     }
@@ -56,6 +64,11 @@ public class DocActivity extends AppCompatActivity {
                     titleview.setText(title);
                 }
                 break;
+            case EDIT_DESCR:
+                if (resultCode==RESULT_OK){
+                    text = data.getStringExtra("text2");
+                    docview.setText(text);
+                }
         }
     }
 }
